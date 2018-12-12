@@ -1,0 +1,4 @@
+Pls update on https://github.com/getlantern/lantern
+
+1. put lantern.tar.gz on /home/wxt/
+2. dpkg -i flantern-installer-beta-64-bit.deb

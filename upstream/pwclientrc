@@ -1,0 +1,9 @@
+# Sample .pwclientrc file for the LKML project,
+# running on patchwork.kernel.org.
+#
+# Save this file to ~/.pwclientrc
+#
+[base]
+url: https://patchwork.kernel.org/xmlrpc/
+project: LKML
+

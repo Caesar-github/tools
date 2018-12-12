@@ -1,0 +1,104 @@
+10:27:19 475	Load Setting ok
+10:27:19 518	RKAndroidTool v1.3.9.1 Start Run
+10:27:19 522	Scan thread:5884
+10:27:19 523	Info:(thread=4100)IoControlProc-->DeviceIoControl In
+10:27:19 524	Info:(thread=4100)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+10:27:19 525	Info:(thread=6020)IoControlProc-->DeviceIoControl In
+10:27:19 525	Info:(thread=6020)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+10:27:19 531	ProcessID:3864,ThreadID:5868,RefCount:0
+10:27:19 531	ProcessID:3864,ThreadID:5884,RefCount:0
+10:27:19 532	ProcessID:3864,ThreadID:4100,RefCount:0
+10:27:19 534	Info:(thread=5604)IoControlProc-->DeviceIoControl In
+10:27:19 537	Info:(thread=5604)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+10:27:19 539	Info:(thread=2500)IoControlProc-->DeviceIoControl In
+10:27:19 540	Info:(thread=2500)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+10:27:19 549	Info:(thread=5596)IoControlProc-->DeviceIoControl In
+10:27:19 566	Info:(thread=5596)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+10:27:26 933	Error:OpenDeviceInterface failed
+10:27:26 934	Error:Get FriendlyName failed
+10:27:28 981	Info:wait for exiting scan thread start
+10:27:29 133	Info:wait for exiting main thread start
+10:27:29 147	ProcessID:3864,ThreadID:5868,RefCount:0
+10:58:06 363	Load Setting ok
+10:58:06 394	RKAndroidTool v1.3.9.1 Start Run
+10:58:06 394	Scan thread:4084
+10:58:06 394	Info:(thread=5372)IoControlProc-->DeviceIoControl In
+10:58:06 394	Info:(thread=5372)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+10:58:06 394	Info:(thread=6060)IoControlProc-->DeviceIoControl In
+10:58:06 394	Info:(thread=6060)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+10:58:06 394	ProcessID:5848,ThreadID:5912,RefCount:0
+10:58:06 394	ProcessID:5848,ThreadID:4084,RefCount:0
+10:58:06 394	ProcessID:5848,ThreadID:5372,RefCount:0
+10:58:06 410	Info:(thread=3472)IoControlProc-->DeviceIoControl In
+10:58:06 410	Info:(thread=3472)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+10:58:06 410	Info:(thread=5332)IoControlProc-->DeviceIoControl In
+10:58:06 410	Info:(thread=5332)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+10:58:06 425	Info:(thread=4944)IoControlProc-->DeviceIoControl In
+10:58:06 425	Info:(thread=4944)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+10:58:07 533	Error:OpenDeviceInterface failed
+10:58:07 533	Error:Get FriendlyName failed
+10:58:17 891	Info:wait for exiting scan thread start
+10:58:18 062	Info:wait for exiting main thread start
+10:58:18 062	ProcessID:5848,ThreadID:5912,RefCount:0
+11:00:42 592	Load Setting ok
+11:00:42 639	RKAndroidTool v1.3.9.1 Start Run
+11:00:42 639	Scan thread:5472
+11:00:42 639	Info:(thread=2196)IoControlProc-->DeviceIoControl In
+11:00:42 639	Info:(thread=2196)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:00:42 639	Info:(thread=4660)IoControlProc-->DeviceIoControl In
+11:00:42 639	Info:(thread=4660)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:00:42 639	ProcessID:2276,ThreadID:3724,RefCount:0
+11:00:42 639	ProcessID:2276,ThreadID:5472,RefCount:0
+11:00:42 639	ProcessID:2276,ThreadID:2196,RefCount:0
+11:00:42 655	Info:(thread=5972)IoControlProc-->DeviceIoControl In
+11:00:42 655	Info:(thread=5972)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:00:42 655	Info:(thread=4240)IoControlProc-->DeviceIoControl In
+11:00:42 655	Info:(thread=4240)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:00:42 670	Info:(thread=2412)IoControlProc-->DeviceIoControl In
+11:00:42 670	Info:(thread=2412)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:00:45 416	Error:OpenDeviceInterface failed
+11:00:45 416	Error:Get FriendlyName failed
+11:00:48 243	Info:wait for exiting scan thread start
+11:00:48 446	Info:wait for exiting main thread start
+11:00:48 446	ProcessID:2276,ThreadID:3724,RefCount:0
+11:08:44 118	Load Setting ok
+11:08:44 149	RKAndroidTool v1.3.9.1 Start Run
+11:08:44 149	Scan thread:5004
+11:08:44 149	Info:(thread=3312)IoControlProc-->DeviceIoControl In
+11:08:44 149	Info:(thread=3312)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:08:44 149	Info:(thread=2480)IoControlProc-->DeviceIoControl In
+11:08:44 149	ProcessID:4188,ThreadID:1928,RefCount:0
+11:08:44 149	ProcessID:4188,ThreadID:5004,RefCount:0
+11:08:44 149	Info:(thread=2480)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:08:44 165	Info:(thread=4012)IoControlProc-->DeviceIoControl In
+11:08:44 274	Info:(thread=4012)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:08:44 274	Info:(thread=5536)IoControlProc-->DeviceIoControl In
+11:08:44 274	Info:(thread=5536)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:08:44 274	Info:(thread=5872)IoControlProc-->DeviceIoControl In
+11:08:44 274	Info:(thread=5872)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:08:45 522	Error:OpenDeviceInterface failed
+11:08:45 522	Error:Get FriendlyName failed
+11:08:47 341	Error:OpenDeviceInterface failed
+11:08:47 357	Error:Get FriendlyName failed
+11:08:49 808	Info:wait for exiting scan thread start
+11:08:50 010	Info:wait for exiting main thread start
+11:08:50 026	ProcessID:4188,ThreadID:1928,RefCount:0
+11:19:39 564	Load Setting ok
+11:19:39 595	RKAndroidTool v1.3.9.1 Start Run
+11:19:39 595	Scan thread:4956
+11:19:39 595	Info:(thread=2972)IoControlProc-->DeviceIoControl In
+11:19:39 595	Info:(thread=2972)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:19:39 595	Info:(thread=6068)IoControlProc-->DeviceIoControl In
+11:19:39 595	Info:(thread=6068)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:19:39 611	ProcessID:2900,ThreadID:2204,RefCount:0
+11:19:39 611	ProcessID:2900,ThreadID:4956,RefCount:0
+11:19:39 611	ProcessID:2900,ThreadID:2972,RefCount:0
+11:19:39 626	Info:(thread=3540)IoControlProc-->DeviceIoControl In
+11:19:39 735	Info:(thread=3540)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:19:39 735	Info:(thread=6072)IoControlProc-->DeviceIoControl In
+11:19:39 735	Info:(thread=6072)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:19:39 735	Info:(thread=4916)IoControlProc-->DeviceIoControl In
+11:19:39 735	Info:(thread=4916)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+11:19:44 041	Info:wait for exiting scan thread start
+11:19:44 103	Info:wait for exiting main thread start
+11:19:44 103	ProcessID:2900,ThreadID:2204,RefCount:0

@@ -1,0 +1,47 @@
+20:39:26 812	Load Setting ok
+20:39:26 843	RKAndroidTool v1.3.5.0 Start Run
+20:39:26 843	Scan thread:3264
+20:39:26 845	Info:(thread=2592)IoControlProc-->DeviceIoControl In
+20:39:26 855	ProcessID:5860,ThreadID:5420,RefCount:0
+20:39:26 856	ProcessID:5860,ThreadID:3264,RefCount:0
+20:39:26 856	ProcessID:5860,ThreadID:2592,RefCount:0
+20:39:26 991	Info:(thread=2592)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+20:39:26 992	Info:(thread=4340)IoControlProc-->DeviceIoControl In
+20:39:26 993	Info:(thread=4340)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+20:39:27 006	Info:(thread=5456)IoControlProc-->DeviceIoControl In
+20:39:27 007	Info:(thread=5456)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+20:39:27 008	Info:(thread=4288)IoControlProc-->DeviceIoControl In
+20:39:27 008	Info:(thread=4288)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+20:39:47 524	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=1792
+20:39:47 525	INFO:开始测试设备
+20:39:47 526	INFO:执行开始
+20:39:47 528	INFO:测试设备成功
+20:39:47 530	INFO:开始下载文件
+20:39:47 532	INFO: Start to download files to flash,backup offset=0x18000
+20:39:47 534	INFO:开始下载文件到Flash
+20:39:47 534	Info:RKA_File_Download start,file=system,offset=0x1cc000
+20:40:14 197	INFO: Download files to flash finished,Total(126733312)B
+20:40:14 198	INFO: Start to check data
+20:40:14 199	INFO:开始校验下载数据
+20:40:14 201	Info:RKA_File_Check start,file=system,offset=0x1cc000
+20:40:21 084	INFO:下载文件成功,耗时(33556MS)
+20:40:21 088	INFO:执行成功
+20:56:14 808	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=5244
+20:56:14 809	INFO:开始测试设备
+20:56:14 810	INFO:执行开始
+20:56:14 814	INFO:测试设备成功
+20:56:14 821	INFO:开始下载文件
+20:56:14 826	INFO: Start to download files to flash,backup offset=0x18000
+20:56:14 831	INFO:开始下载文件到Flash
+20:56:14 831	Info:RKA_File_Download start,file=system,offset=0x1cc000
+20:56:43 944	INFO: Download files to flash finished,Total(126733312)B
+20:56:43 945	INFO: Start to check data
+20:56:43 950	INFO:开始校验下载数据
+20:56:43 951	Info:RKA_File_Check start,file=system,offset=0x1cc000
+20:56:51 724	INFO:下载文件成功,耗时(36910MS)
+20:56:51 732	INFO:执行成功
+21:51:39 038	Info:wait for exiting scan thread start
+21:51:39 066	Info:wait for exiting main thread start
+21:51:39 073	ProcessID:5860,ThreadID:5420,RefCount:0
+21:51:39 074	ProcessID:5860,ThreadID:3776,RefCount:0
+21:51:39 074	ProcessID:5860,ThreadID:3344,RefCount:0

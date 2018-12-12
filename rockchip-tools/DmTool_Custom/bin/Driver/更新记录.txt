@@ -1,0 +1,27 @@
+Ver:Rockusb Driver v2.1
+time:2012.08.27
+Content:
+1.增加RK30B芯片支持
+
+Ver:Rockusb Driver v3.0
+time:2012.11.12
+Content:
+1.设备描述统一使用Rockusb Device
+2.增加RK310B支持
+
+Ver:Rockusb Driver v3.1
+time:2013.02.22
+Content:
+1.增加bus reset支持
+Ver:Rockusb Driver v3.3
+time:2013.02.27
+Content:
+1.解决OnstartDevice时,在某些电脑上的延时过长问题
+Ver:Rockusb Driver v3.4
+time:2013.03.06
+Content:
+1.处理一些蓝屏的风险
+Ver:Rockusb Driver v3.5
+time:2013.03.12
+Content:
+1.处理异常情况下出现的设备名重复问题

@@ -1,0 +1,148 @@
+From acd6c02a69e49fe40e353bc4a4b337b96c698d81 Mon Sep 17 00:00:00 2001
+From: Caesar Wang <wxt@rock-chips.com>
+Date: Mon, 1 Jun 2015 18:48:36 +0800
+Subject: [PATCH 4/4] ARM: dts: add the support power-domain node on RK3288
+ SoCs
+
+We can add more domains node in the future.
+This patch add the needed clocks into power-controller.
+As the discuess about all the device clocks being listed in
+the power-domains itself.
+
+There are several reasons as follows:
+
+Firstly, the clocks need be turned off to save power when
+the system enter the suspend state. So we need to enumerate
+the clocks in the dts. In order to power domain can turn on and off.
+
+Secondly, the reset-circuit should reset be synchronous on RK3288,
+then sync revoked. So we need to enable clocks of all devices.
+In other words, we have to enable the clocks before you operate them
+if all the device clocks are included in someone domians.
+
+Someone wish was to get the clocks by reading the clocks from the
+device nodes, We can do that but we can solve the above issues.
+
+Anyway, the best ideas we can fix it in the future SoCs.
+
+Signed-off-by: jinkun.hong <jinkun.hong@rock-chips.com>
+Signed-off-by: Caesar Wang <wxt@rock-chips.com>
+
+Series-changes: 16
+- Manually copy the problem in patch v15.
+- rebase the description.
+
+Series-changes: 15
+- As Tomasz remarked previously the dts should represent the hardware
+  and the power-domains are part of the pmu.
+
+Series-changes: 14
+- Remove essential clocks from rk3288 PD_VIO domain, Some clocks are
+  essential for the system health and should not be turned down.
+  However there is no owner for them so if they listed as belonging to power
+  domain we'll try toggling them up and down during power domain transition.
+  As a result we either fail to suspend or resume the system.
+
+Series-changes: 10
+- fix missing the #include <dt-bindings/power-domain/rk3288.h>.
+- remove the notes.
+
+Series-changes: 9
+- add decription for power-doamin node.
+
+Series-changes: 8
+- DTS go back to v2.
+
+Series-changes: 3
+- Decomposition power-controller, changed to multiple controller
+  (gpu-power-controller, hevc-power-controller).
+
+Series-changes: 2
+- make pd_vio clocks all one entry per line and alphabetize.
+- power: power-controller move back to pinctrl: pinctrl.
+---
+ arch/arm/boot/dts/rk3288.dtsi | 60 ++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 59 insertions(+), 1 deletion(-)
+
+diff --git a/arch/arm/boot/dts/rk3288.dtsi b/arch/arm/boot/dts/rk3288.dtsi
+index 22316d0..161931d 100644
+--- a/arch/arm/boot/dts/rk3288.dtsi
++++ b/arch/arm/boot/dts/rk3288.dtsi
+@@ -44,6 +44,7 @@
+ #include <dt-bindings/pinctrl/rockchip.h>
+ #include <dt-bindings/clock/rk3288-cru.h>
+ #include <dt-bindings/thermal/thermal.h>
++#include <dt-bindings/power-domain/rk3288.h>
+ #include "skeleton.dtsi"
+ 
+ / {
+@@ -590,8 +591,65 @@
+ 	};
+ 
+ 	pmu: power-management@ff730000 {
+-		compatible = "rockchip,rk3288-pmu", "syscon";
++		compatible = "rockchip,rk3288-pmu", "syscon", "simple-mfd";
+ 		reg = <0xff730000 0x100>;
++
++		power: power-controller {
++			compatible = "rockchip,rk3288-power-controller";
++			#power-domain-cells = <1>;
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			pd_gpu {
++				reg = <RK3288_PD_GPU>;
++				clocks = <&cru ACLK_GPU>;
++			};
++
++			pd_hevc {
++				reg = <RK3288_PD_HEVC>;
++				clocks = <&cru ACLK_HEVC>,
++					 <&cru SCLK_HEVC_CABAC>,
++					 <&cru SCLK_HEVC_CORE>,
++					 <&cru HCLK_HEVC>;
++			};
++
++			pd_vio {
++				reg = <RK3288_PD_VIO>;
++				clocks = <&cru ACLK_IEP>,
++					 <&cru ACLK_ISP>,
++					 <&cru ACLK_RGA>,
++					 <&cru ACLK_VIP>,
++					 <&cru ACLK_VOP0>,
++					 <&cru ACLK_VOP1>,
++					 <&cru DCLK_VOP0>,
++					 <&cru DCLK_VOP1>,
++					 <&cru HCLK_IEP>,
++					 <&cru HCLK_ISP>,
++					 <&cru HCLK_RGA>,
++					 <&cru HCLK_VIP>,
++					 <&cru HCLK_VOP0>,
++					 <&cru HCLK_VOP1>,
++					 <&cru PCLK_EDP_CTRL>,
++					 <&cru PCLK_HDMI_CTRL>,
++					 <&cru PCLK_LVDS_PHY>,
++					 <&cru PCLK_MIPI_CSI>,
++					 <&cru PCLK_MIPI_DSI0>,
++					 <&cru PCLK_MIPI_DSI1>,
++					 <&cru SCLK_EDP_24M>,
++					 <&cru SCLK_EDP>,
++					 <&cru SCLK_HDMI_CEC>,
++					 <&cru SCLK_HDMI_HDCP>,
++					 <&cru SCLK_ISP_JPE>,
++					 <&cru SCLK_ISP>,
++					 <&cru SCLK_RGA>;
++			};
++
++			pd_video {
++				reg = <RK3288_PD_VIDEO>;
++				clocks = <&cru ACLK_VCODEC>,
++					 <&cru HCLK_VCODEC>;
++			};
++		};
+ 	};
+ 
+ 	sgrf: syscon@ff740000 {
+-- 
+1.9.1
+

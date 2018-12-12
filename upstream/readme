@@ -1,0 +1,232 @@
+Kernel的Upstream工作:
+
+为什么需要upstream?
+规范代码,获得更好的可读性；
+发现潜在bug;
+获得更多关注,有开发者会帮我们修复bug;
+更容易升级kernel版本;
+
+需要严谨的工作态度:
+1. kernel版本的升级主要在这里下载:
+(1)稳定版本: https://www.kernel.org/
+git clone git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
+
+(2)各块maintainer的维护:
+https://git.kernel.org/cgit/linux/kernel/git
+
+2. 如何收到订制查邮件:
+(1) 比如订制自己到rockchip的邮件里:
+http://lists.infradead.org/mailman/listinfo/linux-rockchip
+
+(2) 查看rockchip最近的upstream的提交
+https://patchwork.kernel.org/project/linux-rockchip/list/
+
+3.如何制作upstream补丁并发送
+
+步骤:
+制作补丁;
+发送补丁;
+maintainer 反馈;
+根据maintainer的要求修改,或者对maintainer的要求提出疑问; 并回复邮件
+再次发出V2补丁;
+maintainer接受补丁,回复applied;
+maintainer把补丁合并到master分支;
+
+这边介绍几个工具：
+(1)sendmail:
+参看博文：http://blog.sina.com.cn/s/blog_a6559d920101ljqr.html
+修改,提交时加签名
+	git commit -s
+生成补丁:
+git format-patch --cover-letter -2 -o outgoing/
+检查补丁:
+	./scripts/checkpatch.pl --strict outgoing/
+修改,重新生成没有警告和错误的补丁
+	有一些格式可能会检查不出来,需要靠自己发现
+编辑outgoing/0000-cover-letter.patch,填写标题和内容
+
+
+(2)patman
+
+patman
+这个工具在u-boot/tools/patman中,这是一个开源工具(maintainer是Simon Glass), 集成了补丁制作,检查和发送.
+
+This tool is a Python script which:
+- Creates patch directly from your branch
+- Cleans them up by removing unwanted tags
+- Inserts a cover letter with change lists
+- Runs the patches through checkpatch.pl and its own checks
+- Optionally emails them out to selected people
+参数:
+patman -n -c5 -s1 
+
+patman是依赖于关键在来实现的,常用的关键字:
+Series-to: email / alias        #发给谁, 多个收件人以逗号隔开
+Series-cc: email / alias, …  #抄送给谁,多个抄送人以逗号隔开
+Series-version: n                 #版本号
+Series-prefix: prefix             #版本前缀,比如 RFC或者RESEND
+Cover-letter:                        #信封头
+This is the patch set title     #信封标题,
+blah blah                             #内容
+more blah blah
+END                                    #结束; (以上关键字只需要在最上一条commit中体现)
+Series-changes: n              #第n版的修改记录, 每一条补丁中都需要这个关键字
+- Guinea pig moved into its cage
+空一行, 然后加上Series-changes: n-1, 第n-1版本的修改记录,同上
+回复邮件, 不能使用HTML格式email, 建议用thunderbird.
+
+修改补丁,再次发送:
+制作:git format-patch -3 --cover-letter -v 2 -o outgoing/
+发出: git send-email …
+
+或者在commit上加入以下关键字:
+Series-version: 2
+Series-changes: 2
+-blah blah
+发出: patman -c3 -s1
+
+因为263xmail邮箱的限制,一次只能发送2封邮件,其他邮件会发送失败.
+推荐使用gmail邮箱来发送,需要使用VPN
+网页打开gmail->设置->账户导入->添加您拥有的其他电子邮件地址,填入***@rock-chips.com的邮箱信息.
+修改~/.gitconfig文件
+
+# No VPN channel
+[sendemail]
+#	smtpserver = smtpwcom.263xmail.com
+#	smtpserverport = 465
+#	smtpencryption = tls
+#	smtpuser = wxt@rock-chips.com
+#   smtppass = 密码
+
+#VPN channel
+#[patman]
+from = Caesar Wang <wxt@rock-chips.com>
+smtpserver = smtp.gmail.com
+smtpuser = caesar.upstream@gmail.com
+envelopesender = caesar.upstream@gmail.com 
+smtpencryption = tls
+#https://support.google.com/accounts/answer/185833生成密码
+smtppass = 密码
+smtpserverport = 587
+#smtpdebug = 1
+#chainreplyto = false
+
+4 订阅邮件
+
+http://vger.kernel.org/vger-lists.html 点订阅,实际是发送邮件给majordomo@vger.kernel.org
+
+http://lists.infradead.org/mailman/listinfo找到linux-rockchip,用邮箱注册一个帐号,会收到一封确认邮件,确认后登录可以修改配置.
+Set Digest Mode 摘要模式,如果打开,一天能收到一封摘要邮件;只要把这个关掉才能收到完整的补丁.
+Receive your own posts to the list? 是否接收自己发的补丁,建议关掉,否则会出现重复邮件
+Conceal yourself from subscriber list? 偷偷订阅
+Avoid duplicate copies of messages? 如果你的邮箱已经在收件人或抄送人列表中,就不再发给你了.
+
+http://lists.infradead.org/mailman/listinfo/linux-rockchip, Linux-rockchip Subscribers->Visit Subscribers List登录->找到自己的邮箱,可以再次进入到设置界面
+
+
+如果有人发布rockchip的补丁,只要抄送给了linux-rockchip@lists.infradead.org就会收到邮件,
+如果有问题,可以直接回复邮件指出
+如果觉得这个补丁很好,可以在邮件中回复
+Reviewed-by: *** <***@rock-chips.com>
+或Tested-by: *** <***@rock-chips.com>
+注意不能使用html格式,要用text格式.
+
+发布高质量的补丁,有助于提高在upstream的威望,获取maintainer的信任, 回复高质量的review邮件也可以, 即便只是一句简单的Reviewed-by: *** <***@rock-chips.com>
+
+
+
+5 如何收搜补丁？
+https://patchwork.kernel.org/project/LKML/list/中检索
+https://lkml.org/ 中检索
+https://patchwork.kernel.org/help/pwclient/中下载pwclient工具,放到/usr/bin下
+https://patchwork.kernel.org/project/LKML/ -> project info ->下载.pwclientrc文件,放到~目录下.
+pwclient list "wdt"       # 列出标题中包含”wdt”的所有补丁
+pwclient list -w Heiko "wdt" # 列出Heiko发不的,包含”wdt”的补丁
+常用参数:
+apply <ID>   : Apply a patch (in the current dir, using -p1)
+       git-am <ID>  : Apply a patch to current git branch using "git am"
+       get <ID>       : Download a patch and save it locally
+       view <ID>     : View a patch
+
+
+Every upstream person is different.  Doug’s experience:
+Rockchip (Heiko): very helpful / responsive
+Audio, Regulator, SPI (Mark Brown): very responsive, very smart, not very diplomatic
+I2C (Wolfram): not responsive, but good at not losing track of things (does this in his spare time)
+Clock (Mike T): periods of responsiveness
+ARM (Russell King): ...
+
+
+
+
+6. upstream的格式:
+
+upstream发2封以上才需要cover-letter.
+如果发有超过V2,那么需要Series-version和Series-changes，
+用uboot的代码里tools/patman/patman去自动发送,
+patchman -n -c3  //先预先查看patch
+patchman -c3 -i //发送patch
+
+patman -m 就可以忽略默认送给的maintainer
+具体格式如附件000* patch
+
+
+ARM: rockchip: fix the SMP code style
+    
+    Use the below scripts to check:
+    scripts/checkpatch.pl -f --subject arch/arm/mach-rockchip/platsmp.c
+    
+    Signed-off-by: Caesar Wang <wxt@rock-chips.com>
+    
+    Series-to: Heiko Stuebner <heiko@sntech.de>
+    Series-cc: dianders@chromium.org
+    Series-cc: Dmitry Torokhov <dmitry.torokhov@gmail.com>
+    Series-cc: linux-rockchip@lists.infradead.org
+    
+    Series-version: 5
+    
+    Series-changes: 5
+    - Add the changelog.
+
+    Series-changes: 2
+    - Use the checkpatch.pl -f --subjective to check.
+    
+    Cover-letter:
+    ARM: rockchip: fix the SMP
+    Verified on url =
+        https://chromium.googlesource.com/chromiumos/third_party/kernel/+/chromeos-3.14
+    Tested by 176000 cycles are pass with CPU up/dowm test scripts.
+    END
+
+
+问题：
+1.如果有遇到patman不像cc给那些人，可以用git sent-email --to xx --to yy --cc efuse_v2/*
+发送
+
+
+7. upstream的coding style格式可以参考
+Documentation/CodingStyle 或者当前文件夹的文件
+
+
+[1] https://github.com/rkchrome/uboot.git
+[2] https://github.com/linux-rockchip/u-boot-rockchip.git branch u-boot-rk3288
+[3] https://github.com/linux-rockchip/rkflashtool.git
+[4] http://wiki.t-firefly.com/index.php/Firefly-RK3288/Serial_debug/en
+
+
+
+Meaning of Acked-by/Reviewed-by
+Thomas DS posted a proposal on the list:
+
+Tested-by: as in the manual: I performed some kind of test (typically described below the tag) on the patch.
+Reviewed-by: I code-reviewed the patch and did my best in spotting problems, but I am not sufficiently familiar with the area touched to provide an Acked-by. This means that, although I reviewed the patch, there may be remaining problems that would be spotted by someone with more experience in that area. The detection of such problems should not mean that my Reviewed-by: was too hasty.
+Acked-by: I code-reviewed the patch (note: not necessarily tested) and am familiar enough with the area touched that I can indicate it is a good patch. If someone else detects a serious problem with this patch afterwards, then this Acked-by may have been too hasty.
+Amendments:
+
+If you have some comments and the patch is good to go after these changes, don't put an Acked-by. Acked-by means it's good to go as it is.
+Anybody can review, only a newcomer's opinion will not be trusted as much. This should be better clarified in the manual.
+In addition to the formal tags, people should reply to infrastructural changes whether they agree to the principle with a simple English sentence.
+
+###send one by one
+git send-email --in-reply-to=message id (1446538209-13490-1-git-send-email-wxt@rock-chips.com) --to --cc xxxx
+

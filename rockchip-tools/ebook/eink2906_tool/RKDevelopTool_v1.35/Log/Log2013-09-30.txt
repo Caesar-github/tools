@@ -1,0 +1,32 @@
+09:39:52 789	Load Setting ok
+09:39:52 834	RKAndroidTool v1.3.5.0 Start Run
+09:39:52 836	Scan thread:4772
+09:39:52 843	ProcessID:1524,ThreadID:3012,RefCount:0
+09:39:52 844	ProcessID:1524,ThreadID:4772,RefCount:0
+09:39:52 845	Info:(thread=4600)IoControlProc-->DeviceIoControl In
+09:39:52 963	Info:(thread=4600)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+09:39:52 964	Info:(thread=3760)IoControlProc-->DeviceIoControl In
+09:39:52 964	Info:(thread=3760)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+09:39:52 971	Info:(thread=2180)IoControlProc-->DeviceIoControl In
+09:39:52 971	Info:(thread=2180)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+09:39:52 972	Info:(thread=3856)IoControlProc-->DeviceIoControl In
+09:39:52 972	Info:(thread=3856)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+09:41:16 601	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=876
+09:41:16 602	INFO:开始测试设备
+09:41:16 602	INFO:执行开始
+09:41:16 606	INFO:测试设备成功
+09:41:16 607	INFO:开始下载文件
+09:41:16 609	INFO: Start to download files to flash,backup offset=0x18000
+09:41:16 612	INFO:开始下载文件到Flash
+09:41:16 612	Info:RKA_File_Download start,file=recovery,offset=0x10000
+09:41:18 515	INFO: Download files to flash finished,Total(10158080)B
+09:41:18 516	INFO: Start to check data
+09:41:18 520	INFO:开始校验下载数据
+09:41:18 521	Info:RKA_File_Check start,file=recovery,offset=0x10000
+09:41:19 118	INFO:下载文件成功,耗时(2512MS)
+09:41:19 124	INFO:执行成功
+09:52:54 742	Info:wait for exiting scan thread start
+09:52:54 892	Info:wait for exiting main thread start
+09:52:54 899	ProcessID:1524,ThreadID:3012,RefCount:0
+09:52:54 900	ProcessID:1524,ThreadID:2644,RefCount:0
+09:52:54 900	ProcessID:1524,ThreadID:504,RefCount:0

@@ -1,0 +1,160 @@
+#!/bin/bash
+# Does a nice git-cherry pick for a branch
+#
+# I'm somewhat embarassed by how hacky this is, but it works.
+
+# Echo commands; check for errors
+set -x
+set -e
+
+# Temp file for working with...
+tempfile=$(tempfile)
+
+# Do the cherry-pick
+git cherry-pick -x "$1"
+
+
+
+# Add a change ID
+EDITOR=cat git commit --amend
+
+# Script to do the bulk of the work.
+echo '
+import sys
+input = sys.stdin.read()
+
+#notes = "NOTE: exynos4 CCF patches picked to avoid conflicts\n"
+notes = None
+bug = "BUG=None"
+test = "TEST=None"
+git = "'$2'"
+
+
+
+#bug = "BUG=None"
+#test = "TEST=Build and boot"
+
+
+#bug = "BUG=chrome-os-partner:50756"
+#test = "TEST=Build and boot on rk3288"
+
+# git = "git.kernel.org balbi/usb.git next"
+
+
+# bug = "BUG=chrome-os-partner:50683"
+# test = "TEST=USB still works OK"
+
+#bug = "BUG=chrome-os-partner:50495"
+#test = "TEST=Use kgdb / kdb"
+
+#bug = "BUG=chrome-os-partner:49400"
+#test = "TEST=With series USB stress test is much better"
+
+
+#bug = "BUG=chrome-os-partner:47192"
+
+#bug = "BUG=chromium:587603"
+#test = "TEST=modprobe tcrypt sec=2 mode=303"
+
+#bug = "BUG=chrome-os-partner:47190"
+#test = "TEST=Broadcom bluetooth still works; will keep an eye on crash reports"
+
+#bug = "BUG=chrome-os-partner:48588, chrome-os-partner:34330"
+#test = "TEST=Minnie BT works w/ USB webcam plugged in."
+
+
+#bug = "BUG=chrome-os-partner:46308"
+#test = "TEST=w/ series both USB ports are happy"
+
+#bug = "BUG=chrome-os-partner:46679"
+#test = "TEST=Stress system w/ balloon.arm"
+#bug="BUG=chromium:481462, chromium:570532"
+#test="TEST=Stress memory and watch cat videos."
+
+#git = "git.kernel.org bluetooth/bluetooth.git master"
+
+# git = "git.kernel.org broonie/spi.git fix/rockchip"
+# git = "git.kernel.org broonie/regulator.git topic/rk808"
+# git = "git.kernel.org broonie/regulator.git fix/rk808"
+# git = "git.kernel.org broonie/regulator.git topic/voltage-ev"
+# git = "git.kernel.org broonie/regulator.git topic/suspend"
+# git = "git.kernel.org broonie/sound.git fix/rockchip"
+
+#git = "git.kernel.org clk/linux.git clk-next"
+
+# git = "git.kernel.org gregkh/tty.git for-next"
+# git = "git.kernel.org khilman/linux.git avs-next"
+# git = "git.kernel.org lee/mfd.git for-mfd-next"
+
+# git = "git.kernel.org linusw/linux-pinctrl.git fixes"
+
+# git = "git.kernel.org jikos/hid.git for-4.1/i2c-hid"
+
+# git = "git.kernel.org jic23/iio.git togreg"
+# git = "git.kernel.org jic23/iio.git testing"
+# git = "git.kernel.org rafael/linux-pm.git linux-next"
+# git = "git.kernel.org wsa/linux.git i2c/for-3.17"
+# git = "git.linaro.org/git/people/john.stultz/linux.git fortglx/3.17/time"
+# git = "git.linaro.org/people/mike.turquette/linux.git clk-next"
+# git = "git.linaro.org/people/ulf.hansson/mmc.git next"
+# git = "git.kernel.org thierry.reding/linux-pwm.git for-next"
+# git = "github.com/mmind/linux-rockchip/ wip/v3.18-next/dts"
+# git = "git.kernel.org mmind/linux-rockchip.git v3.18-next/dts"
+# git = "git.kernel.org mmind/linux-rockchip.git v3.18-next/dma"
+# git = "git.kernel.org mmind/linux-rockchip.git linuxrockchip/v3.19-clk/next"
+# git = "git.kernel.org mmind/linux-rockchip.git linuxrockchip/v4.2-armsoc/dts"
+
+git = "git.kernel.org mmind/linux-rockchip.git for-next"
+
+
+# git = "git.kernel.org balbi/usb.git next"
+
+# git = "git.kernel.org next/linux-next.git akpm"
+
+# Find change ID
+for line in input.splitlines():
+  if line.startswith("Change-Id: "):
+    cid = line
+    break
+
+# Throw cherry-pick to the front
+print "UPSTREAM:",
+
+got_signed_off = False
+
+# Add the changeID first, add my signed-off-by
+for line in input.splitlines():
+  if line.startswith("Change-Id: "):
+     continue
+  if (cid and
+       (line.startswith("Signed-off-by:") or
+        line.startswith("Cc:")            or
+        line.startswith("Acked-by:")      or
+        line.startswith("Tested-by:")     or
+        line.startswith("Reviewed-by:")   or
+        line.startswith("Fixes:")         or
+        line.startswith("Suggested-by:")  or
+        line.startswith("Reported-by:")     )):
+     if notes: print notes
+  #   print bug
+   #  print test
+   #  print
+     print cid
+     cid = None
+  if cid is None and not line.strip():
+     continue
+  if "Signed-off-by" in line and "wxt@rock-chips.com" in line:
+     got_signed_off = True
+  if line.startswith("(cherry picked from"):
+     if not got_signed_off:
+       print "Signed-off-by: Caesar Wang <wxt@rock-chips.com>"
+     if git:
+       a, b, c = line.partition("from ")
+       print "%s%s%s\n %s" % (a, b, git, c)
+       line = None
+  if line is not None:
+    print line
+' > ${tempfile}
+git filter-branch -f --msg-filter "python ${tempfile}" -- HEAD~..
+
+rm ${tempfile}

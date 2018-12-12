@@ -1,0 +1,223 @@
+/*
+ * Copyright (C) 2013 Oracle.
+ *
+ * This program is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, see http://www.gnu.org/copyleft/gpl.txt
+ */
+
+#include <stdlib.h>
+#include <errno.h>
+#include "parse.h"
+#include "smatch.h"
+#include "smatch_slist.h"
+#include "smatch_extra.h"
+
+#define UNKNOWN_SIZE (-1)
+
+static int my_strlen_id;
+/*
+ * The trick with the my_equiv_id is that if we have:
+ * foo = strlen(bar);
+ * We don't know at that point what the strlen() is but we know it's equivalent
+ * to "foo" so maybe we can find the value of "foo" later.
+ */
+static int my_equiv_id;
+
+static struct smatch_state *size_to_estate(int size)
+{
+	sval_t sval;
+
+	sval.type = &int_ctype;
+	sval.value = size;
+
+	return alloc_estate_sval(sval);
+}
+
+static struct smatch_state *unmatched_strlen_state(struct sm_state *sm)
+{
+	return size_to_estate(UNKNOWN_SIZE);
+}
+
+static void set_strlen_undefined(struct sm_state *sm, struct expression *mod_expr)
+{
+	set_state(sm->owner, sm->name, sm->sym, size_to_estate(UNKNOWN_SIZE));
+}
+
+static void set_strlen_equiv_undefined(struct sm_state *sm, struct expression *mod_expr)
+{
+	set_state(sm->owner, sm->name, sm->sym, &undefined);
+}
+
+static void match_string_assignment(struct expression *expr)
+{
+	struct range_list *rl;
+
+	if (expr->op != '=')
+		return;
+	if (!get_implied_strlen(expr->right, &rl))
+		return;
+	set_state_expr(my_strlen_id, expr->left, alloc_estate_rl(clone_rl(rl)));
+}
+
+static void match_strlen(const char *fn, struct expression *expr, void *unused)
+{
+	struct expression *right;
+	struct expression *str;
+	struct expression *len_expr;
+	char *len_name;
+	struct smatch_state *state;
+
+	right = strip_expr(expr->right);
+	str = get_argument_from_call_expr(right->args, 0);
+	len_expr = strip_expr(expr->left);
+
+	len_name = expr_to_var(len_expr);
+	if (!len_name)
+		return;
+
+	state = __alloc_smatch_state(0);
+        state->name = len_name;
+	state->data = len_expr;
+
+	set_state_expr(my_equiv_id, str, state);
+}
+
+static int get_strlen_from_string(struct expression *expr, struct range_list **rl)
+{
+	sval_t sval;
+	int len;
+
+	len = expr->string->length;
+	sval = sval_type_val(&int_ctype, len - 1);
+	*rl = alloc_rl(sval, sval);
+	return 1;
+}
+
+
+static int get_strlen_from_state(struct expression *expr, struct range_list **rl)
+{
+	struct smatch_state *state;
+
+	state = get_state_expr(my_strlen_id, expr);
+	if (!state)
+		return 0;
+	*rl = estate_rl(state);
+	return 1;
+}
+
+static int get_strlen_from_equiv(struct expression *expr, struct range_list **rl)
+{
+	struct smatch_state *state;
+
+	state = get_state_expr(my_equiv_id, expr);
+	if (!state || !state->data)
+		return 0;
+	if (!get_implied_rl((struct expression *)state->data, rl))
+		return 0;
+	return 1;
+}
+
+int get_implied_strlen(struct expression *expr, struct range_list **rl)
+{
+
+	*rl = NULL;
+
+	switch (expr->type) {
+	case EXPR_STRING:
+		return get_strlen_from_string(expr, rl);
+	}
+
+	if (get_strlen_from_state(expr, rl))
+		return 1;
+	if (get_strlen_from_equiv(expr, rl))
+		return 1;
+	return 0;
+}
+
+int get_size_from_strlen(struct expression *expr)
+{
+	struct range_list *rl;
+	sval_t max;
+
+	if (!get_implied_strlen(expr, &rl))
+		return 0;
+	max = rl_max(rl);
+	if (sval_is_negative(max) || sval_is_max(max))
+		return 0;
+
+	return max.value + 1; /* add one because strlen doesn't include the NULL */
+}
+
+void set_param_strlen(const char *name, struct symbol *sym, char *key, char *value)
+{
+	struct range_list *rl = NULL;
+	struct smatch_state *state;
+	char fullname[256];
+
+	if (strncmp(key, "$", 1) != 0)
+		return;
+
+	snprintf(fullname, 256, "%s%s", name, key + 1);
+
+	str_to_rl(&int_ctype, value, &rl);
+	if (!rl || is_whole_rl(rl))
+		return;
+	state = alloc_estate_rl(rl);
+	set_state(my_strlen_id, fullname, sym, state);
+}
+
+static void match_call(struct expression *expr)
+{
+	struct expression *arg;
+	struct range_list *rl;
+	int i;
+
+	i = 0;
+	FOR_EACH_PTR(expr->args, arg) {
+		if (!get_implied_strlen(arg, &rl))
+			continue;
+		if (!is_whole_rl(rl))
+			sql_insert_caller_info(expr, STR_LEN, i, "$", show_rl(rl));
+		i++;
+	} END_FOR_EACH_PTR(arg);
+}
+
+static void struct_member_callback(struct expression *call, int param, char *printed_name, struct sm_state *sm)
+{
+	if (sm->state == &merged)
+		return;
+	sql_insert_caller_info(call, STR_LEN, param, printed_name, sm->state->name);
+}
+
+void register_strlen(int id)
+{
+	my_strlen_id = id;
+
+	add_unmatched_state_hook(my_strlen_id, &unmatched_strlen_state);
+
+	select_caller_info_hook(set_param_strlen, STR_LEN);
+	add_hook(&match_string_assignment, ASSIGNMENT_HOOK);
+
+	add_modification_hook(my_strlen_id, &set_strlen_undefined);
+	add_merge_hook(my_strlen_id, &merge_estates);
+	add_hook(&match_call, FUNCTION_CALL_HOOK);
+	add_member_info_callback(my_strlen_id, struct_member_callback);
+}
+
+void register_strlen_equiv(int id)
+{
+	my_equiv_id = id;
+	add_function_assign_hook("strlen", &match_strlen, NULL);
+	add_modification_hook(my_equiv_id, &set_strlen_equiv_undefined);
+}
+

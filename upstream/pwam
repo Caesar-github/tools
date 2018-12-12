@@ -1,0 +1,70 @@
+#!/bin/bash
+# Does a nice git-cherry pick for a branch
+#
+# I'm somewhat embarassed by how hacky this is, but it works.
+
+# Echo commands; check for errors
+set -x
+set -e
+
+# Temp file for working with...
+tempfile=$(tempfile)
+
+PW_ID=$1
+#PW_ID=
+
+# Do the cherry-pick
+pwclient view "${PW_ID}" | git am -3
+
+# Add a change ID
+EDITOR=cat git commit --amend
+
+# Script to do the bulk of the work.
+echo '
+import sys
+input = sys.stdin.read()
+
+#notes = "NOTE: exynos4 CCF patches picked to avoid conflicts\n"
+notes = None
+bug = "BUG=None"
+test = "TEST=None"
+
+bug = "BUG=chrome-os-partner:46934"
+test = "TEST=Manually test with the commands"
+
+#bug = "BUG=chrome-os-partner:24222"
+#test = "TEST=With series /dev/watchdog works and reports watchdog reboots"
+#bug = "BUG=chrome-os-partner:20212, chrome-os-partner:20362"
+#test = "TEST=With other patches in series, see that WiFi shows up as SDR50 and\nexternal card as SDR104."
+
+# Find change ID
+#for line in input.splitlines():
+#  if line.startswith("Change-Id: "):
+#    cid = line
+ #   break
+
+# Throw cherry-pick to the front
+print "FROMLIST:",
+
+# Add the changeID first, add my signed-off-by
+for line in input.splitlines():
+#  if line.startswith("Change-Id: "):
+#     continue
+#  if (cid and
+  if (
+       (line.startswith("Signed-off-by:") or
+        line.startswith("Reported-by:")     )):
+  #   if notes: print notes
+#     print bug
+     #print test
+     print
+#     print cid
+#     cid = None
+  print line
+print ""
+print "(am from https://patchwork.kernel.org/patch/%d/)" % ('${PW_ID}')
+print "Signed-off-by: Caesar Wang <wxt@rock-chips.com>"
+' > ${tempfile}
+git filter-branch -f --msg-filter "python ${tempfile}" -- HEAD~..
+
+rm ${tempfile}

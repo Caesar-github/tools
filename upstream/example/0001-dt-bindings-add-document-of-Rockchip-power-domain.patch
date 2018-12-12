@@ -1,0 +1,208 @@
+From 41be1c5bd8fd18c461570ec541b11901603b34ec Mon Sep 17 00:00:00 2001
+From: Caesar Wang <wxt@rock-chips.com>
+Date: Sun, 19 Apr 2015 17:18:13 +0800
+Subject: [PATCH 1/4] dt-bindings: add document of Rockchip power domain
+
+This add the necessary binding documentation for the power domain
+found on Rockchip Socs.
+
+Signed-off-by: jinkun.hong <jinkun.hong@rock-chips.com>
+Signed-off-by: Caesar Wang <wxt@rock-chips.com>
+
+Series-to: heiko@sntech.de
+Series-to: khilman@linaro.org
+Series-to: ulf.hansson@linaro.org
+
+Series-cc: tomasz.figa@gmail.com
+Series-cc: dmitry.torokhov@gmail.com
+Series-cc: dianders@chromium.org
+Series-cc: linux-rockchip@lists.infradead.org
+Series-cc: linux-arm-kernel@lists.infradead.org
+Series-cc: linux-kernel@vger.kernel.org
+
+Series-version: 16
+
+Series-changes: 16
+- remove the pmu node.
+
+Series-changes: 9
+- add document decription.
+
+Series-changes: 8
+- document go back to v2.
+
+Series-changes: 3
+- DT structure has changed.
+
+Series-changes: 2
+- move clocks to "optional".
+
+Cover-letter:
+ARM: rk3288: Add PM Domain support
+Add power domain drivers based on generic power domain for
+Rockchip platform, and support RK3288 SoCs.
+
+Verified on url =
+    https://chromium.googlesource.com/chromiumos/third_party/kernel/+/v3.14
+    localhost / # cat /sys/kernel/debug/pm_genpd/pm_genpd_summary
+    domain                      status         slaves
+    /device                      runtime        status
+    ----------------------------------------------------------------------
+    pd_video                        off
+    /devices/ff9a0800.iommu                     suspended
+    /devices/ff9a0000.video-codec               suspended
+    pd_vio                          on
+    /devices/ff930300.iommu                     suspended
+    /devices/ff940300.iommu                     suspended
+    /devices/ff930000.vop                       suspended
+    /devices/ff940000.vop                       suspended
+    /devices/ff980000.hdmi                      unsupported
+    /devices/rockchip-edp                       unsupported
+    pd_hevc                         off
+    pd_gpu                          off
+    /devices/ffa30000.gpu                       suspended
+
+    The following is the easy example.
+
+    vopb: vop@ff930000 {
+        compatible = "rockchip,rk3288-vop";
+        ...
+        iommus = <&vopb_mmu>;
+        power-domains = <&power RK3288_PD_VIO>;
+        status = "disabled";
+        ...
+    };
+
+    vopb_mmu: iommu@ff930300 {
+        compatible = "rockchip,iommu";
+        ...
+        interrupt-names = "vopb_mmu";
+        power-domains = <&power RK3288_PD_VIO>;
+        #iommu-cells = <0>;
+        status = "disabled";
+        ...
+    };
+
+    vopl: vop@ff940000 {
+        compatible = "rockchip,rk3288-vop";
+        reg = <0xff940000 0x19c>;
+        ...
+        iommus = <&vopl_mmu>;
+        power-domains = <&power RK3288_PD_VIO>;
+        status = "disabled";
+        ...
+    };
+
+    vopl_mmu: iommu@ff940300 {
+        compatible = "rockchip,iommu";
+        ...
+        interrupt-names = "vopl_mmu";
+        power-domains = <&power RK3288_PD_VIO>;
+        #iommu-cells = <0>;
+        status = "disabled";
+    };
+
+    Others, we can verify this driver for the EDP.
+    We can apply the following these patchs.
+
+    6967631 New          [v2,1/8] drm: exynos/dp: fix code style
+    6967741 New          [v2,2/8] drm: exynos/dp: convert to drm bridge mode
+    6967801 New          [v2,3/8] drm: bridge: analogix_dp: split exynos dp driver to bridge dir
+    6967791 New          [v2,4/8] drm: rockchip/dp: add rockchip platform dp driver
+    6968031 New          [v2,5/8] drm: bridge/analogix_dp: add platform device type support
+    6968141 New          [v2,6/8] drm: bridge: analogix_dp: add some rk3288 special registers setting
+    6967941 New          [v2,7/8] drm: bridge: analogix_dp: try force hpd after plug in lookup failed
+    6967971 New          [v2,8/8] drm: bridge/analogix_dp: expand the delay time for hpd detect
+
+    There is a recent addition from Linus Walleij,
+    called simple-mfd [a] that is supposed to get added real early for kernel 4.2
+
+    [a]:
+    https://git.kernel.org/cgit/linux/kernel/git/linusw/linux-integrator.git/commit/?h=simple-mfd&id=fcf294c020ff7ee4e3b1e96159e4dc7a17ad59d1
+
+    Here is my branch, Tested by chromeos-3.14 and next-kernel.
+
+    2b82899 ARM: dts: add RK3288 power-domain node
+    6967941 New          [v2,7/8] drm: bridge: analogix_dp: try force hpd after plug in lookup failed
+    6967971 New          [v2,8/8] drm: bridge/analogix_dp: expand the delay time for hpd detect
+
+    Here is my branch, Tested by chromeos-3.14 and next-kernel.
+
+    2b82899 ARM: dts: add RK3288 power-domain node
+    69d0b5b soc: rockchip: power-domain: support power domain driver for
+    RK3288 SoCs
+    66f8758 ARM: power-domain: rockchip: add all the domain type on RK3288
+    SoCs
+    c5f12a3 dt-bindings: add document of Rockchip power domain
+    7a834ba Merge branch 'for-linus' of
+    git://git.kernel.org/pub/scm/linux/kernel/git/jikos/hid
+    0be0171 HID: wacom: Report correct device resolution when using the
+    wireless adapater
+    2b9bea0 Merge tag 'mfd-fixes-4.2' of
+    git://git.kernel.org/pub/scm/linux/kernel/git/lee/mfd
+    016a9f5 Merge tag 'ntb-4.2-rc7' of git://github.com/jonmason/ntb
+    a3ca013 Merge branch 'for-linus' of
+    git://git.kernel.org/pub/scm/linux/kernel/git/viro/vfs
+    ......
+
+END
+---
+ .../bindings/soc/rockchip/power_domain.txt         | 46 ++++++++++++++++++++++
+ 1 file changed, 46 insertions(+)
+ create mode 100644 Documentation/devicetree/bindings/soc/rockchip/power_domain.txt
+
+diff --git a/Documentation/devicetree/bindings/soc/rockchip/power_domain.txt b/Documentation/devicetree/bindings/soc/rockchip/power_domain.txt
+new file mode 100644
+index 0000000..138754d
+--- /dev/null
++++ b/Documentation/devicetree/bindings/soc/rockchip/power_domain.txt
+@@ -0,0 +1,46 @@
++* Rockchip Power Domains
++
++Rockchip processors include support for multiple power domains which can be
++powered up/down by software based on different application scenes to save power.
++
++Required properties for power domain controller:
++- compatible: Should be one of the following.
++	"rockchip,rk3288-power-controller" - for RK3288 SoCs.
++- #power-domain-cells: Number of cells in a power-domain specifier.
++	Should be 1 for multiple PM domains.
++- #address-cells: Should be 1.
++- #size-cells: Should be 0.
++
++Required properties for power domain sub nodes:
++- reg: index of the power domain, should use macros in:
++	"include/dt-bindings/power-domain/rk3288.h" - for rk3288 type power domain.
++- clocks (optional): phandles to clocks which need to be enabled while power domain
++	switches state.
++
++Example:
++
++	power: power-controller {
++		compatible = "rockchip,rk3288-power-controller";
++		#power-domain-cells = <1>;
++		#address-cells = <1>;
++		#size-cells = <0>;
++
++		pd_gpu {
++			reg = <RK3288_PD_GPU>;
++			clocks = <&cru ACLK_GPU>;
++		};
++	};
++
++Node of a device using power domains must have a power-domains property,
++containing a phandle to the power device node and an index specifying which
++power domain to use.
++The index should use macros in:
++	"include/dt-bindings/power-domain/rk3288.h" - for rk3288 type power domain.
++
++Example of the node using power domain:
++
++	node {
++		/* ... */
++		power-domains = <&power RK3288_PD_GPU>;
++		/* ... */
++	};
+-- 
+1.9.1
+

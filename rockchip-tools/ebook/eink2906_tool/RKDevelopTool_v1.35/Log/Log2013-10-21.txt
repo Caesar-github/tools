@@ -1,0 +1,755 @@
+16:38:24 298	Load Setting ok
+16:38:24 354	RKAndroidTool v1.3.5.0 Start Run
+16:38:24 354	Scan thread:9292
+16:38:24 357	Info:(thread=6564)IoControlProc-->DeviceIoControl In
+16:38:24 357	Info:(thread=6564)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+16:38:24 358	Info:(thread=8824)IoControlProc-->DeviceIoControl In
+16:38:24 359	Info:(thread=8824)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+16:38:24 367	Info:(thread=5604)IoControlProc-->DeviceIoControl In
+16:38:24 368	Info:(thread=5604)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+16:38:24 369	Info:(thread=9200)IoControlProc-->DeviceIoControl In
+16:38:24 370	Info:(thread=9200)IoControlProc-->DeviceIoControl Out,ret=1,err=183
+16:38:24 373	ProcessID:4320,ThreadID:9500,RefCount:0
+16:38:24 391	ProcessID:4320,ThreadID:9292,RefCount:0
+16:38:58 411	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=8424
+16:38:58 413	INFO:开始测试设备
+16:38:58 415	INFO:执行开始
+16:38:58 418	INFO:测试设备成功
+16:38:58 421	INFO:开始下载文件
+16:38:58 424	INFO: Start to download files to flash,backup offset=0x18000
+16:38:58 429	INFO:开始下载文件到Flash
+16:38:58 430	Info:RKA_File_Download start,file=boot,offset=0x8000
+16:38:59 669	INFO: Download files to flash finished,Total(6029312)B
+16:38:59 670	INFO: Start to check data
+16:38:59 674	INFO:开始校验下载数据
+16:38:59 676	Info:RKA_File_Check start,file=boot,offset=0x8000
+16:39:00 033	INFO:下载文件成功,耗时(1622MS)
+16:39:00 037	INFO:执行成功
+16:52:11 897	INFO:执行开始
+16:52:11 903	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=11232
+16:52:11 905	INFO:开始测试设备
+16:52:11 908	INFO:测试设备成功
+16:52:11 911	INFO:开始下载文件
+16:52:11 915	INFO: Start to download files to flash,backup offset=0x18000
+16:52:11 917	INFO:开始下载文件到Flash
+16:52:11 918	Info:RKA_File_Download start,file=boot,offset=0x8000
+16:52:13 156	INFO: Download files to flash finished,Total(6029312)B
+16:52:13 158	INFO: Start to check data
+16:52:13 166	INFO:开始校验下载数据
+16:52:13 166	Info:RKA_File_Check start,file=boot,offset=0x8000
+16:52:13 533	INFO:下载文件成功,耗时(1622MS)
+16:52:13 538	INFO:执行成功
+16:54:35 546	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=10768
+16:54:35 547	INFO:开始测试设备
+16:54:35 547	INFO:执行开始
+16:54:35 553	INFO:测试设备成功
+16:54:35 557	INFO:开始下载文件
+16:54:35 561	INFO: Start to download files to flash,backup offset=0x18000
+16:54:35 565	INFO:开始下载文件到Flash
+16:54:35 565	Info:RKA_File_Download start,file=boot,offset=0x8000
+16:54:36 798	INFO: Download files to flash finished,Total(6029312)B
+16:54:36 799	INFO: Start to check data
+16:54:36 808	INFO:开始校验下载数据
+16:54:36 809	Info:RKA_File_Check start,file=boot,offset=0x8000
+16:54:37 191	INFO:下载文件成功,耗时(1622MS)
+16:54:37 201	INFO:执行成功
+17:17:16 415	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=12204
+17:17:16 417	INFO:开始测试设备
+17:17:16 427	INFO:执行开始
+17:17:16 438	INFO:测试设备成功
+17:17:16 441	INFO:开始下载文件
+17:17:16 445	INFO: Start to download files to flash,backup offset=0x18000
+17:17:16 449	INFO:开始下载文件到Flash
+17:17:16 450	Info:RKA_File_Download start,file=boot,offset=0x8000
+17:17:17 676	INFO: Download files to flash finished,Total(6029312)B
+17:17:17 677	INFO: Start to check data
+17:17:17 689	INFO:开始校验下载数据
+17:17:17 690	Info:RKA_File_Check start,file=boot,offset=0x8000
+17:17:18 075	INFO:下载文件成功,耗时(1638MS)
+17:17:18 080	INFO:执行成功
+17:22:02 606	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=11464
+17:22:02 607	INFO:开始测试设备
+17:22:02 607	INFO:执行开始
+17:22:02 617	INFO:测试设备成功
+17:22:02 622	INFO:开始下载文件
+17:22:02 628	INFO: Start to download files to flash,backup offset=0x18000
+17:22:02 635	INFO:开始下载文件到Flash
+17:22:02 636	Info:RKA_File_Download start,file=boot,offset=0x8000
+17:22:03 867	INFO: Download files to flash finished,Total(6029312)B
+17:22:03 868	INFO: Start to check data
+17:22:03 876	INFO:开始校验下载数据
+17:22:03 876	Info:RKA_File_Check start,file=boot,offset=0x8000
+17:22:04 242	INFO:下载文件成功,耗时(1623MS)
+17:22:04 249	INFO:执行成功
+17:25:11 207	INFO:执行开始
+17:25:11 215	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=12520
+17:25:11 216	INFO:开始测试设备
+17:25:11 222	INFO:测试设备成功
+17:25:11 227	INFO:开始下载文件
+17:25:11 233	INFO: Start to download files to flash,backup offset=0x18000
+17:25:11 238	INFO:开始下载文件到Flash
+17:25:11 238	Info:RKA_File_Download start,file=boot,offset=0x8000
+17:25:12 459	INFO: Download files to flash finished,Total(6029312)B
+17:25:12 460	INFO: Start to check data
+17:25:12 464	INFO:开始校验下载数据
+17:25:12 465	Info:RKA_File_Check start,file=boot,offset=0x8000
+17:25:12 822	INFO:下载文件成功,耗时(1592MS)
+17:25:12 894	INFO:执行成功
+17:28:43 560	INFO:执行开始
+17:28:43 566	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=12312
+17:28:43 567	INFO:开始测试设备
+17:28:43 573	INFO:测试设备成功
+17:28:43 577	INFO:开始下载文件
+17:28:43 582	INFO: Start to download files to flash,backup offset=0x18000
+17:28:43 586	INFO:开始下载文件到Flash
+17:28:43 587	Info:RKA_File_Download start,file=boot,offset=0x8000
+17:28:44 825	INFO: Download files to flash finished,Total(6029312)B
+17:28:44 826	INFO: Start to check data
+17:28:44 830	INFO:开始校验下载数据
+17:28:44 831	Info:RKA_File_Check start,file=boot,offset=0x8000
+17:28:45 187	INFO:下载文件成功,耗时(1607MS)
+17:28:45 192	INFO:执行成功
+17:31:01 767	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=12012
+17:31:01 768	INFO:开始测试设备
+17:31:01 771	INFO:执行开始
+17:31:01 786	INFO:测试设备成功
+17:31:01 795	INFO:开始下载文件
+17:31:01 799	INFO: Start to download files to flash,backup offset=0x18000
+17:31:01 822	INFO:开始下载文件到Flash
+17:31:01 823	Info:RKA_File_Download start,file=boot,offset=0x8000
+17:31:03 050	INFO: Download files to flash finished,Total(6029312)B
+17:31:03 050	INFO: Start to check data
+17:31:03 055	INFO:开始校验下载数据
+17:31:03 056	Info:RKA_File_Check start,file=boot,offset=0x8000
+17:31:03 450	INFO:下载文件成功,耗时(1654MS)
+17:31:03 460	INFO:执行成功
+17:34:04 012	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=4180
+17:34:04 014	INFO:开始测试设备
+17:34:04 017	INFO:执行开始
+17:34:04 030	INFO:测试设备成功
+17:34:04 037	INFO:开始下载文件
+17:34:04 044	INFO: Start to download files to flash,backup offset=0x18000
+17:34:04 049	INFO:开始下载文件到Flash
+17:34:04 049	Info:RKA_File_Download start,file=boot,offset=0x8000
+17:34:05 278	INFO: Download files to flash finished,Total(6029312)B
+17:34:05 280	INFO: Start to check data
+17:34:05 292	INFO:开始校验下载数据
+17:34:05 293	Info:RKA_File_Check start,file=boot,offset=0x8000
+17:34:05 704	INFO:下载文件成功,耗时(1653MS)
+17:34:05 712	INFO:执行成功
+17:43:32 117	INFO:执行开始
+17:43:32 122	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=7412
+17:43:32 123	INFO:开始测试设备
+17:43:32 128	INFO:测试设备成功
+17:43:32 132	INFO:开始下载文件
+17:43:32 137	INFO: Start to download files to flash,backup offset=0x18000
+17:43:32 141	INFO:开始下载文件到Flash
+17:43:32 142	Info:RKA_File_Download start,file=boot,offset=0x8000
+17:43:33 375	INFO: Download files to flash finished,Total(6029312)B
+17:43:33 376	INFO: Start to check data
+17:43:33 385	INFO:开始校验下载数据
+17:43:33 386	Info:RKA_File_Check start,file=boot,offset=0x8000
+17:43:33 761	INFO:下载文件成功,耗时(1623MS)
+17:43:33 768	INFO:执行成功
+17:46:17 261	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=2000
+17:46:17 262	INFO:开始测试设备
+17:46:17 262	INFO:执行开始
+17:46:17 270	INFO:测试设备成功
+17:46:17 275	INFO:开始下载文件
+17:46:17 280	INFO: Start to download files to flash,backup offset=0x18000
+17:46:17 285	INFO:开始下载文件到Flash
+17:46:17 286	Info:RKA_File_Download start,file=boot,offset=0x8000
+17:46:18 540	INFO: Download files to flash finished,Total(6029312)B
+17:46:18 541	INFO: Start to check data
+17:46:18 551	INFO:开始校验下载数据
+17:46:18 552	Info:RKA_File_Check start,file=boot,offset=0x8000
+17:46:18 938	INFO:下载文件成功,耗时(1653MS)
+17:46:18 946	INFO:执行成功
+17:52:49 058	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=10520
+17:52:49 061	INFO:执行开始
+17:52:49 068	INFO:开始测试设备
+17:52:49 074	INFO:测试设备成功
+17:52:49 078	INFO:开始下载文件
+17:52:49 084	INFO: Start to download files to flash,backup offset=0x18000
+17:52:49 090	INFO:开始下载文件到Flash
+17:52:49 090	Info:RKA_File_Download start,file=boot,offset=0x8000
+17:52:50 311	INFO: Download files to flash finished,Total(6029312)B
+17:52:50 311	INFO: Start to check data
+17:52:50 315	INFO:开始校验下载数据
+17:52:50 316	Info:RKA_File_Check start,file=boot,offset=0x8000
+17:52:50 715	INFO:下载文件成功,耗时(1638MS)
+17:52:50 722	INFO:执行成功
+18:11:10 754	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=11908
+18:11:10 755	INFO:开始测试设备
+18:11:10 756	INFO:执行开始
+18:11:10 765	INFO:测试设备成功
+18:11:10 768	INFO:开始下载文件
+18:11:10 774	INFO: Start to download files to flash,backup offset=0x18000
+18:11:10 780	INFO:开始下载文件到Flash
+18:11:10 781	Info:RKA_File_Download start,file=boot,offset=0x8000
+18:11:12 007	INFO: Download files to flash finished,Total(6029312)B
+18:11:12 008	INFO: Start to check data
+18:11:12 012	INFO:开始校验下载数据
+18:11:12 012	Info:RKA_File_Check start,file=boot,offset=0x8000
+18:11:12 394	INFO:下载文件成功,耗时(1622MS)
+18:11:12 408	INFO:执行成功
+18:13:34 736	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=13532
+18:13:34 737	INFO:开始测试设备
+18:13:34 737	INFO:执行开始
+18:13:34 747	INFO:测试设备成功
+18:13:34 751	INFO:开始下载文件
+18:13:34 758	INFO: Start to download files to flash,backup offset=0x18000
+18:13:34 763	INFO:开始下载文件到Flash
+18:13:34 764	Info:RKA_File_Download start,file=boot,offset=0x8000
+18:13:35 990	INFO: Download files to flash finished,Total(6029312)B
+18:13:35 990	INFO: Start to check data
+18:13:35 995	INFO:开始校验下载数据
+18:13:35 996	Info:RKA_File_Check start,file=boot,offset=0x8000
+18:13:36 367	INFO:下载文件成功,耗时(1607MS)
+18:13:36 383	INFO:执行成功
+18:17:28 540	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=13828
+18:17:28 542	INFO:执行开始
+18:17:28 546	INFO:开始测试设备
+18:17:28 558	INFO:测试设备成功
+18:17:28 563	INFO:开始下载文件
+18:17:28 568	INFO: Start to download files to flash,backup offset=0x18000
+18:17:28 573	INFO:开始下载文件到Flash
+18:17:28 574	Info:RKA_File_Download start,file=boot,offset=0x8000
+18:17:29 790	INFO: Download files to flash finished,Total(6029312)B
+18:17:29 791	INFO: Start to check data
+18:17:29 792	INFO:开始校验下载数据
+18:17:29 792	Info:RKA_File_Check start,file=boot,offset=0x8000
+18:17:30 130	INFO:下载文件成功,耗时(1560MS)
+18:17:30 136	INFO:执行成功
+18:21:05 185	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=14132
+18:21:05 186	INFO:开始测试设备
+18:21:05 187	INFO:执行开始
+18:21:05 202	INFO:测试设备成功
+18:21:05 212	INFO:开始下载文件
+18:21:05 219	INFO: Start to download files to flash,backup offset=0x18000
+18:21:05 224	INFO:开始下载文件到Flash
+18:21:05 225	Info:RKA_File_Download start,file=boot,offset=0x8000
+18:21:06 459	INFO: Download files to flash finished,Total(6029312)B
+18:21:06 459	INFO: Start to check data
+18:21:06 463	INFO:开始校验下载数据
+18:21:06 464	Info:RKA_File_Check start,file=boot,offset=0x8000
+18:21:06 858	INFO:下载文件成功,耗时(1638MS)
+18:21:06 863	INFO:执行成功
+18:23:36 354	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=14856
+18:23:36 356	INFO:开始测试设备
+18:23:36 357	INFO:执行开始
+18:23:36 375	INFO:测试设备成功
+18:23:36 386	INFO:开始下载文件
+18:23:36 392	INFO: Start to download files to flash,backup offset=0x18000
+18:23:36 397	INFO:开始下载文件到Flash
+18:23:36 398	Info:RKA_File_Download start,file=boot,offset=0x8000
+18:23:37 609	INFO: Download files to flash finished,Total(6029312)B
+18:23:37 610	INFO: Start to check data
+18:23:37 613	INFO:开始校验下载数据
+18:23:37 614	Info:RKA_File_Check start,file=boot,offset=0x8000
+18:23:37 990	INFO:下载文件成功,耗时(1592MS)
+18:23:38 071	INFO:执行成功
+18:41:45 839	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=13672
+18:41:45 841	INFO:开始测试设备
+18:41:45 842	INFO:执行开始
+18:41:45 862	INFO:测试设备成功
+18:41:45 868	INFO:开始下载文件
+18:41:45 873	INFO: Start to download files to flash,backup offset=0x18000
+18:41:45 879	INFO:开始下载文件到Flash
+18:41:45 880	Info:RKA_File_Download start,file=boot,offset=0x8000
+18:41:47 111	INFO: Download files to flash finished,Total(6029312)B
+18:41:47 113	INFO: Start to check data
+18:41:47 122	INFO:开始校验下载数据
+18:41:47 124	Info:RKA_File_Check start,file=boot,offset=0x8000
+18:41:47 509	INFO:下载文件成功,耗时(1638MS)
+18:41:47 523	INFO:执行成功
+18:55:32 671	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=15520
+18:55:32 672	INFO:开始测试设备
+18:55:32 672	INFO:执行开始
+18:55:32 680	INFO:测试设备成功
+18:55:32 685	INFO:开始下载文件
+18:55:32 689	INFO: Start to download files to flash,backup offset=0x18000
+18:55:32 693	INFO:开始下载文件到Flash
+18:55:32 694	Info:RKA_File_Download start,file=boot,offset=0x8000
+18:55:33 915	INFO: Download files to flash finished,Total(6029312)B
+18:55:33 916	INFO: Start to check data
+18:55:33 923	INFO:开始校验下载数据
+18:55:33 924	Info:RKA_File_Check start,file=boot,offset=0x8000
+18:55:34 289	INFO:下载文件成功,耗时(1607MS)
+18:55:34 296	INFO:执行成功
+18:59:01 686	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=16004
+18:59:01 687	INFO:开始测试设备
+18:59:01 688	INFO:执行开始
+18:59:01 699	INFO:测试设备成功
+18:59:01 703	INFO:开始下载文件
+18:59:01 711	INFO: Start to download files to flash,backup offset=0x18000
+18:59:01 715	INFO:开始下载文件到Flash
+18:59:01 716	Info:RKA_File_Download start,file=boot,offset=0x8000
+18:59:02 970	INFO: Download files to flash finished,Total(6029312)B
+18:59:02 971	INFO: Start to check data
+18:59:02 975	INFO:开始校验下载数据
+18:59:02 975	Info:RKA_File_Check start,file=boot,offset=0x8000
+18:59:03 352	INFO:下载文件成功,耗时(1638MS)
+18:59:03 361	INFO:执行成功
+19:05:22 741	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=15640
+19:05:22 742	INFO:开始测试设备
+19:05:22 742	INFO:执行开始
+19:05:22 749	INFO:测试设备成功
+19:05:22 754	INFO:开始下载文件
+19:05:22 758	INFO: Start to download files to flash,backup offset=0x18000
+19:05:22 762	INFO:开始下载文件到Flash
+19:05:22 762	Info:RKA_File_Download start,file=boot,offset=0x8000
+19:05:23 992	INFO: Download files to flash finished,Total(6029312)B
+19:05:23 992	INFO: Start to check data
+19:05:23 996	INFO:开始校验下载数据
+19:05:23 997	Info:RKA_File_Check start,file=boot,offset=0x8000
+19:05:24 353	INFO:下载文件成功,耗时(1591MS)
+19:05:24 362	INFO:执行成功
+19:09:59 891	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=4460
+19:09:59 892	INFO:开始测试设备
+19:09:59 892	INFO:执行开始
+19:09:59 900	INFO:测试设备成功
+19:09:59 904	INFO:开始下载文件
+19:09:59 909	INFO: Start to download files to flash,backup offset=0x18000
+19:09:59 913	INFO:开始下载文件到Flash
+19:09:59 914	Info:RKA_File_Download start,file=boot,offset=0x8000
+19:10:01 139	INFO: Download files to flash finished,Total(6029312)B
+19:10:01 139	INFO: Start to check data
+19:10:01 143	INFO:开始校验下载数据
+19:10:01 144	Info:RKA_File_Check start,file=boot,offset=0x8000
+19:10:01 502	INFO:下载文件成功,耗时(1591MS)
+19:10:01 508	INFO:执行成功
+19:18:14 335	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=16848
+19:18:14 336	INFO:开始测试设备
+19:18:14 337	INFO:执行开始
+19:18:14 346	INFO:测试设备成功
+19:18:14 351	INFO:开始下载文件
+19:18:14 357	INFO: Start to download files to flash,backup offset=0x18000
+19:18:14 371	INFO:开始下载文件到Flash
+19:18:14 372	Info:RKA_File_Download start,file=boot,offset=0x8000
+19:18:15 648	INFO: Download files to flash finished,Total(6029312)B
+19:18:15 649	INFO: Start to check data
+19:18:15 654	INFO:开始校验下载数据
+19:18:15 655	Info:RKA_File_Check start,file=boot,offset=0x8000
+19:18:16 015	INFO:下载文件成功,耗时(1669MS)
+19:18:16 022	INFO:执行成功
+19:22:43 612	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=16068
+19:22:43 613	INFO:开始测试设备
+19:22:43 614	INFO:执行开始
+19:22:43 689	INFO:测试设备成功
+19:22:43 700	INFO:开始下载文件
+19:22:43 707	INFO: Start to download files to flash,backup offset=0x18000
+19:22:43 713	INFO:开始下载文件到Flash
+19:22:43 714	Info:RKA_File_Download start,file=boot,offset=0x8000
+19:22:44 965	INFO: Download files to flash finished,Total(6029312)B
+19:22:44 966	INFO: Start to check data
+19:22:44 974	INFO:开始校验下载数据
+19:22:44 975	Info:RKA_File_Check start,file=boot,offset=0x8000
+19:22:45 334	INFO:下载文件成功,耗时(1622MS)
+19:22:45 341	INFO:执行成功
+19:26:43 841	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=15604
+19:26:43 843	INFO:开始测试设备
+19:26:43 844	INFO:执行开始
+19:26:43 863	INFO:测试设备成功
+19:26:43 869	INFO:开始下载文件
+19:26:43 876	INFO: Start to download files to flash,backup offset=0x18000
+19:26:43 884	INFO:开始下载文件到Flash
+19:26:43 885	Info:RKA_File_Download start,file=boot,offset=0x8000
+19:26:45 104	INFO: Download files to flash finished,Total(6029312)B
+19:26:45 105	INFO: Start to check data
+19:26:45 109	INFO:开始校验下载数据
+19:26:45 110	Info:RKA_File_Check start,file=boot,offset=0x8000
+19:26:45 472	INFO:下载文件成功,耗时(1591MS)
+19:26:45 478	INFO:执行成功
+19:45:01 205	INFO:执行开始
+19:45:01 206	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=17224
+19:45:01 207	INFO:开始测试设备
+19:45:01 213	INFO:测试设备成功
+19:45:01 217	INFO:开始下载文件
+19:45:01 221	INFO: Start to download files to flash,backup offset=0x18000
+19:45:01 226	INFO:开始下载文件到Flash
+19:45:01 226	Info:RKA_File_Download start,file=boot,offset=0x8000
+19:45:02 443	INFO: Download files to flash finished,Total(6029312)B
+19:45:02 444	INFO: Start to check data
+19:45:02 449	INFO:开始校验下载数据
+19:45:02 449	Info:RKA_File_Check start,file=boot,offset=0x8000
+19:45:02 824	INFO:下载文件成功,耗时(1592MS)
+19:45:02 830	INFO:执行成功
+19:47:39 557	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=1888
+19:47:39 558	INFO:执行开始
+19:47:39 558	INFO:开始测试设备
+19:47:39 574	INFO:测试设备成功
+19:47:39 580	INFO:开始下载文件
+19:47:39 586	INFO: Start to download files to flash,backup offset=0x18000
+19:47:39 593	INFO:开始下载文件到Flash
+19:47:39 594	Info:RKA_File_Download start,file=boot,offset=0x8000
+19:47:40 804	INFO: Download files to flash finished,Total(6029312)B
+19:47:40 805	INFO: Start to check data
+19:47:40 806	INFO:开始校验下载数据
+19:47:40 806	Info:RKA_File_Check start,file=boot,offset=0x8000
+19:47:41 141	INFO:下载文件成功,耗时(1560MS)
+19:47:41 144	INFO:执行成功
+19:51:31 077	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=18176
+19:51:31 078	INFO:开始测试设备
+19:51:31 078	INFO:执行开始
+19:51:31 093	INFO:测试设备成功
+19:51:31 099	INFO:开始下载文件
+19:51:31 105	INFO: Start to download files to flash,backup offset=0x18000
+19:51:31 118	INFO:开始下载文件到Flash
+19:51:31 119	Info:RKA_File_Download start,file=boot,offset=0x8000
+19:51:32 343	INFO: Download files to flash finished,Total(6029312)B
+19:51:32 345	INFO: Start to check data
+19:51:32 355	INFO:开始校验下载数据
+19:51:32 357	Info:RKA_File_Check start,file=boot,offset=0x8000
+19:51:32 700	INFO:下载文件成功,耗时(1591MS)
+19:51:32 703	INFO:执行成功
+19:53:39 008	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=16700
+19:53:39 009	INFO:开始测试设备
+19:53:39 010	INFO:执行开始
+19:53:39 019	INFO:测试设备成功
+19:53:39 023	INFO:开始下载文件
+19:53:39 028	INFO: Start to download files to flash,backup offset=0x18000
+19:53:39 032	INFO:开始下载文件到Flash
+19:53:39 033	Info:RKA_File_Download start,file=boot,offset=0x8000
+19:53:40 262	INFO: Download files to flash finished,Total(6029312)B
+19:53:40 263	INFO: Start to check data
+19:53:40 273	INFO:开始校验下载数据
+19:53:40 275	Info:RKA_File_Check start,file=boot,offset=0x8000
+19:53:40 644	INFO:下载文件成功,耗时(1622MS)
+19:53:40 651	INFO:执行成功
+20:08:45 332	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=17784
+20:08:45 334	INFO:开始测试设备
+20:08:45 336	INFO:执行开始
+20:08:45 359	INFO:测试设备成功
+20:08:45 366	INFO:开始下载文件
+20:08:45 373	INFO: Start to download files to flash,backup offset=0x18000
+20:08:45 381	INFO:开始下载文件到Flash
+20:08:45 382	Info:RKA_File_Download start,file=boot,offset=0x8000
+20:08:46 616	INFO: Download files to flash finished,Total(6029312)B
+20:08:46 617	INFO: Start to check data
+20:08:46 622	INFO:开始校验下载数据
+20:08:46 622	Info:RKA_File_Check start,file=boot,offset=0x8000
+20:08:46 991	INFO:下载文件成功,耗时(1623MS)
+20:08:46 997	INFO:执行成功
+20:15:39 353	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=18692
+20:15:39 353	INFO:开始测试设备
+20:15:39 354	INFO:执行开始
+20:15:39 364	INFO:测试设备成功
+20:15:39 369	INFO:开始下载文件
+20:15:39 374	INFO: Start to download files to flash,backup offset=0x18000
+20:15:39 378	INFO:开始下载文件到Flash
+20:15:39 378	Info:RKA_File_Download start,file=boot,offset=0x8000
+20:15:40 624	INFO: Download files to flash finished,Total(6029312)B
+20:15:40 626	INFO: Start to check data
+20:15:40 641	INFO:开始校验下载数据
+20:15:40 643	Info:RKA_File_Check start,file=boot,offset=0x8000
+20:15:41 004	INFO:下载文件成功,耗时(1638MS)
+20:15:41 012	INFO:执行成功
+20:18:32 990	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=20284
+20:18:32 992	INFO:执行开始
+20:18:32 993	INFO:开始测试设备
+20:18:33 005	INFO:测试设备成功
+20:18:33 012	INFO:开始下载文件
+20:18:33 021	INFO: Start to download files to flash,backup offset=0x18000
+20:18:33 028	INFO:开始下载文件到Flash
+20:18:33 028	Info:RKA_File_Download start,file=boot,offset=0x8000
+20:18:34 261	INFO: Download files to flash finished,Total(6029312)B
+20:18:34 262	INFO: Start to check data
+20:18:34 268	INFO:开始校验下载数据
+20:18:34 268	Info:RKA_File_Check start,file=boot,offset=0x8000
+20:18:34 639	INFO:下载文件成功,耗时(1623MS)
+20:18:34 645	INFO:执行成功
+20:23:31 120	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=14612
+20:23:31 121	INFO:开始测试设备
+20:23:31 122	INFO:执行开始
+20:23:31 131	INFO:测试设备成功
+20:23:31 136	INFO:开始下载文件
+20:23:31 142	INFO: Start to download files to flash,backup offset=0x18000
+20:23:31 146	INFO:开始下载文件到Flash
+20:23:31 147	Info:RKA_File_Download start,file=boot,offset=0x8000
+20:23:32 375	INFO: Download files to flash finished,Total(6029312)B
+20:23:32 376	INFO: Start to check data
+20:23:32 383	INFO:开始校验下载数据
+20:23:32 384	Info:RKA_File_Check start,file=boot,offset=0x8000
+20:23:32 749	INFO:下载文件成功,耗时(1607MS)
+20:23:32 756	INFO:执行成功
+20:27:42 259	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=17624
+20:27:42 260	INFO:开始测试设备
+20:27:42 261	INFO:执行开始
+20:27:42 268	INFO:测试设备成功
+20:27:42 274	INFO:开始下载文件
+20:27:42 278	INFO: Start to download files to flash,backup offset=0x18000
+20:27:42 282	INFO:开始下载文件到Flash
+20:27:42 283	Info:RKA_File_Download start,file=boot,offset=0x8000
+20:27:43 508	INFO: Download files to flash finished,Total(6029312)B
+20:27:43 510	INFO: Start to check data
+20:27:43 519	INFO:开始校验下载数据
+20:27:43 521	Info:RKA_File_Check start,file=boot,offset=0x8000
+20:27:43 890	INFO:下载文件成功,耗时(1607MS)
+20:27:43 897	INFO:执行成功
+20:38:58 125	INFO:执行开始
+20:38:58 130	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=4884
+20:38:58 131	INFO:开始测试设备
+20:38:58 136	INFO:测试设备成功
+20:38:58 141	INFO:开始下载文件
+20:38:58 146	INFO: Start to download files to flash,backup offset=0x18000
+20:38:58 152	INFO:开始下载文件到Flash
+20:38:58 153	Info:RKA_File_Download start,file=boot,offset=0x8000
+20:38:59 427	INFO: Download files to flash finished,Total(6029312)B
+20:38:59 428	INFO: Start to check data
+20:38:59 435	INFO:开始校验下载数据
+20:38:59 436	Info:RKA_File_Check start,file=boot,offset=0x8000
+20:38:59 793	INFO:下载文件成功,耗时(1638MS)
+20:38:59 799	INFO:执行成功
+20:50:50 224	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=20012
+20:50:50 225	INFO:执行开始
+20:50:50 225	INFO:开始测试设备
+20:50:50 233	INFO:测试设备成功
+20:50:50 236	INFO:开始下载文件
+20:50:50 241	INFO: Start to download files to flash,backup offset=0x18000
+20:50:50 245	INFO:开始下载文件到Flash
+20:50:50 246	Info:RKA_File_Download start,file=boot,offset=0x8000
+20:50:51 484	INFO: Download files to flash finished,Total(6029312)B
+20:50:51 484	INFO: Start to check data
+20:50:51 488	INFO:开始校验下载数据
+20:50:51 489	Info:RKA_File_Check start,file=boot,offset=0x8000
+20:50:51 823	INFO:下载文件成功,耗时(1591MS)
+20:50:51 826	INFO:执行成功
+20:59:03 603	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=1808
+20:59:03 604	INFO:执行开始
+20:59:03 609	INFO:开始测试设备
+20:59:03 619	INFO:测试设备成功
+20:59:03 623	INFO:开始下载文件
+20:59:03 629	INFO: Start to download files to flash,backup offset=0x18000
+20:59:03 636	INFO:开始下载文件到Flash
+20:59:03 637	Info:RKA_File_Download start,file=boot,offset=0x8000
+20:59:04 866	INFO: Download files to flash finished,Total(6029312)B
+20:59:04 866	INFO: Start to check data
+20:59:04 870	INFO:开始校验下载数据
+20:59:04 871	Info:RKA_File_Check start,file=boot,offset=0x8000
+20:59:05 232	INFO:下载文件成功,耗时(1591MS)
+20:59:05 239	INFO:执行成功
+21:04:46 497	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=17084
+21:04:46 498	INFO:开始测试设备
+21:04:46 499	INFO:执行开始
+21:04:46 512	INFO:测试设备成功
+21:04:46 519	INFO:开始下载文件
+21:04:46 531	INFO: Start to download files to flash,backup offset=0x18000
+21:04:46 540	INFO:开始下载文件到Flash
+21:04:46 540	Info:RKA_File_Download start,file=boot,offset=0x8000
+21:04:47 793	INFO: Download files to flash finished,Total(6029312)B
+21:04:47 795	INFO: Start to check data
+21:04:47 812	INFO:开始校验下载数据
+21:04:47 814	Info:RKA_File_Check start,file=boot,offset=0x8000
+21:04:48 194	INFO:下载文件成功,耗时(1669MS)
+21:04:48 207	INFO:执行成功
+21:12:07 837	INFO:执行开始
+21:12:07 841	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=18560
+21:12:07 842	INFO:开始测试设备
+21:12:07 847	INFO:测试设备成功
+21:12:07 851	INFO:开始下载文件
+21:12:07 856	INFO: Start to download files to flash,backup offset=0x18000
+21:12:07 861	INFO:开始下载文件到Flash
+21:12:07 861	Info:RKA_File_Download start,file=boot,offset=0x8000
+21:12:09 083	INFO: Download files to flash finished,Total(6029312)B
+21:12:09 083	INFO: Start to check data
+21:12:09 087	INFO:开始校验下载数据
+21:12:09 088	Info:RKA_File_Check start,file=boot,offset=0x8000
+21:12:09 446	INFO:下载文件成功,耗时(1591MS)
+21:12:09 460	INFO:执行成功
+21:15:03 066	INFO:执行开始
+21:15:03 075	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=16316
+21:15:03 076	INFO:开始测试设备
+21:15:03 086	INFO:测试设备成功
+21:15:03 091	INFO:开始下载文件
+21:15:03 098	INFO: Start to download files to flash,backup offset=0x18000
+21:15:03 104	INFO:开始下载文件到Flash
+21:15:03 104	Info:RKA_File_Download start,file=boot,offset=0x8000
+21:15:04 343	INFO: Download files to flash finished,Total(6029312)B
+21:15:04 345	INFO: Start to check data
+21:15:04 351	INFO:开始校验下载数据
+21:15:04 352	Info:RKA_File_Check start,file=boot,offset=0x8000
+21:15:04 751	INFO:下载文件成功,耗时(1654MS)
+21:15:04 756	INFO:执行成功
+21:19:30 691	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=14244
+21:19:30 692	INFO:开始测试设备
+21:19:30 692	INFO:执行开始
+21:19:30 704	INFO:测试设备成功
+21:19:30 709	INFO:开始下载文件
+21:19:30 716	INFO: Start to download files to flash,backup offset=0x18000
+21:19:30 721	INFO:开始下载文件到Flash
+21:19:30 722	Info:RKA_File_Download start,file=boot,offset=0x8000
+21:19:31 945	INFO: Download files to flash finished,Total(6029312)B
+21:19:31 945	INFO: Start to check data
+21:19:31 951	INFO:开始校验下载数据
+21:19:31 952	Info:RKA_File_Check start,file=boot,offset=0x8000
+21:19:32 325	INFO:下载文件成功,耗时(1607MS)
+21:19:32 337	INFO:执行成功
+21:20:35 640	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=7020
+21:20:35 642	INFO:开始测试设备
+21:20:35 646	INFO:执行开始
+21:20:35 670	INFO:测试设备成功
+21:20:35 677	INFO:开始下载文件
+21:20:35 684	INFO: Start to download files to flash,backup offset=0x18000
+21:20:35 690	INFO:开始下载文件到Flash
+21:20:35 691	Info:RKA_File_Download start,file=boot,offset=0x8000
+21:20:36 918	INFO: Download files to flash finished,Total(6029312)B
+21:20:36 919	INFO: Start to check data
+21:20:36 927	INFO:开始校验下载数据
+21:20:36 928	Info:RKA_File_Check start,file=boot,offset=0x8000
+21:20:37 283	INFO:下载文件成功,耗时(1607MS)
+21:20:37 289	INFO:执行成功
+21:22:24 676	INFO:执行开始
+21:22:24 680	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=13412
+21:22:24 681	INFO:开始测试设备
+21:22:24 685	INFO:测试设备成功
+21:22:24 690	INFO:开始下载文件
+21:22:24 695	INFO: Start to download files to flash,backup offset=0x18000
+21:22:24 699	INFO:开始下载文件到Flash
+21:22:24 700	Info:RKA_File_Download start,file=boot,offset=0x8000
+21:22:25 941	INFO: Download files to flash finished,Total(6029312)B
+21:22:25 943	INFO: Start to check data
+21:22:25 950	INFO:开始校验下载数据
+21:22:25 951	Info:RKA_File_Check start,file=boot,offset=0x8000
+21:22:26 337	INFO:下载文件成功,耗时(1638MS)
+21:22:26 348	INFO:执行成功
+21:25:33 612	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=6556
+21:25:33 613	INFO:开始测试设备
+21:25:33 613	INFO:执行开始
+21:25:33 621	INFO:测试设备成功
+21:25:33 628	INFO:开始下载文件
+21:25:33 634	INFO: Start to download files to flash,backup offset=0x18000
+21:25:33 639	INFO:开始下载文件到Flash
+21:25:33 640	Info:RKA_File_Download start,file=boot,offset=0x8000
+21:25:34 879	INFO: Download files to flash finished,Total(6029312)B
+21:25:34 880	INFO: Start to check data
+21:25:34 886	INFO:开始校验下载数据
+21:25:34 887	Info:RKA_File_Check start,file=boot,offset=0x8000
+21:25:35 266	INFO:下载文件成功,耗时(1638MS)
+21:25:35 281	INFO:执行成功
+21:29:51 826	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=20168
+21:29:51 827	INFO:开始测试设备
+21:29:51 828	INFO:执行开始
+21:29:52 845	INFO:测试设备成功
+21:29:52 854	INFO:开始下载文件
+21:29:52 865	INFO: Start to download files to flash,backup offset=0x18000
+21:29:52 875	INFO:开始下载文件到Flash
+21:29:52 877	Info:RKA_File_Download start,file=boot,offset=0x8000
+21:29:54 116	INFO: Download files to flash finished,Total(6029312)B
+21:29:54 116	INFO: Start to check data
+21:29:54 120	INFO:开始校验下载数据
+21:29:54 120	Info:RKA_File_Check start,file=boot,offset=0x8000
+21:29:54 491	INFO:下载文件成功,耗时(1622MS)
+21:29:54 496	INFO:执行成功
+21:51:08 590	INFO:执行开始
+21:51:08 594	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=10072
+21:51:08 596	INFO:开始测试设备
+21:51:08 604	INFO:测试设备成功
+21:51:08 608	INFO:开始下载文件
+21:51:08 613	INFO: Start to download files to flash,backup offset=0x18000
+21:51:08 617	INFO:开始下载文件到Flash
+21:51:08 617	Info:RKA_File_Download start,file=boot,offset=0x8000
+21:51:09 849	INFO: Download files to flash finished,Total(6029312)B
+21:51:09 850	INFO: Start to check data
+21:51:09 854	INFO:开始校验下载数据
+21:51:09 855	Info:RKA_File_Check start,file=boot,offset=0x8000
+21:51:10 215	INFO:下载文件成功,耗时(1606MS)
+21:51:10 379	INFO:执行成功
+22:01:47 348	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=13380
+22:01:47 349	INFO:开始测试设备
+22:01:47 350	INFO:执行开始
+22:01:47 361	INFO:测试设备成功
+22:01:47 365	INFO:开始下载文件
+22:01:47 371	INFO: Start to download files to flash,backup offset=0x18000
+22:01:47 377	INFO:开始下载文件到Flash
+22:01:47 378	Info:RKA_File_Download start,file=boot,offset=0x8000
+22:01:48 631	INFO: Download files to flash finished,Total(6029312)B
+22:01:48 632	INFO: Start to check data
+22:01:48 640	INFO:开始校验下载数据
+22:01:48 641	Info:RKA_File_Check start,file=boot,offset=0x8000
+22:01:48 999	INFO:下载文件成功,耗时(1623MS)
+22:01:49 005	INFO:执行成功
+22:04:17 358	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=2980
+22:04:17 360	INFO:开始测试设备
+22:04:17 361	INFO:执行开始
+22:04:17 373	INFO:测试设备成功
+22:04:17 377	INFO:开始下载文件
+22:04:17 382	INFO: Start to download files to flash,backup offset=0x18000
+22:04:17 388	INFO:开始下载文件到Flash
+22:04:17 388	Info:RKA_File_Download start,file=boot,offset=0x8000
+22:04:18 636	INFO: Download files to flash finished,Total(6029312)B
+22:04:18 638	INFO: Start to check data
+22:04:18 648	INFO:开始校验下载数据
+22:04:18 649	Info:RKA_File_Check start,file=boot,offset=0x8000
+22:04:19 043	INFO:下载文件成功,耗时(1653MS)
+22:04:19 049	INFO:执行成功
+22:06:21 069	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=6532
+22:06:21 071	INFO:开始测试设备
+22:06:21 073	INFO:执行开始
+22:06:21 088	INFO:测试设备成功
+22:06:21 094	INFO:开始下载文件
+22:06:21 099	INFO: Start to download files to flash,backup offset=0x18000
+22:06:21 104	INFO:开始下载文件到Flash
+22:06:21 105	Info:RKA_File_Download start,file=boot,offset=0x8000
+22:06:22 319	INFO: Download files to flash finished,Total(6029312)B
+22:06:22 319	INFO: Start to check data
+22:06:22 320	INFO:开始校验下载数据
+22:06:22 320	Info:RKA_File_Check start,file=boot,offset=0x8000
+22:06:22 651	INFO:下载文件成功,耗时(1560MS)
+22:06:22 654	INFO:执行成功
+22:09:19 396	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=18220
+22:09:19 398	INFO:执行开始
+22:09:19 403	INFO:开始测试设备
+22:09:19 409	INFO:测试设备成功
+22:09:19 415	INFO:开始下载文件
+22:09:19 422	INFO: Start to download files to flash,backup offset=0x18000
+22:09:19 427	INFO:开始下载文件到Flash
+22:09:19 428	Info:RKA_File_Download start,file=boot,offset=0x8000
+22:09:20 641	INFO: Download files to flash finished,Total(6029312)B
+22:09:20 642	INFO: Start to check data
+22:09:20 646	INFO:开始校验下载数据
+22:09:20 646	Info:RKA_File_Check start,file=boot,offset=0x8000
+22:09:20 999	INFO:下载文件成功,耗时(1576MS)
+22:09:21 005	INFO:执行成功
+22:12:37 229	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=6756
+22:12:37 230	INFO:开始测试设备
+22:12:37 231	INFO:执行开始
+22:12:37 239	INFO:测试设备成功
+22:12:37 243	INFO:开始下载文件
+22:12:37 247	INFO: Start to download files to flash,backup offset=0x18000
+22:12:37 251	INFO:开始下载文件到Flash
+22:12:37 252	Info:RKA_File_Download start,file=boot,offset=0x8000
+22:12:38 488	INFO: Download files to flash finished,Total(6029312)B
+22:12:38 489	INFO: Start to check data
+22:12:38 494	INFO:开始校验下载数据
+22:12:38 495	Info:RKA_File_Check start,file=boot,offset=0x8000
+22:12:38 868	INFO:下载文件成功,耗时(1623MS)
+22:12:38 874	INFO:执行成功
+22:15:05 516	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=18288
+22:15:05 517	INFO:执行开始
+22:15:05 518	INFO:开始测试设备
+22:15:05 529	INFO:测试设备成功
+22:15:05 534	INFO:开始下载文件
+22:15:05 540	INFO: Start to download files to flash,backup offset=0x18000
+22:15:05 546	INFO:开始下载文件到Flash
+22:15:05 547	Info:RKA_File_Download start,file=boot,offset=0x8000
+22:15:06 787	INFO: Download files to flash finished,Total(6029312)B
+22:15:06 788	INFO: Start to check data
+22:15:06 792	INFO:开始校验下载数据
+22:15:06 793	Info:RKA_File_Check start,file=boot,offset=0x8000
+22:15:07 150	INFO:下载文件成功,耗时(1607MS)
+22:15:07 157	INFO:执行成功
+22:26:27 664	Image Thread Path(\\?\USB#VID_2207&PID_290A#6&2E2F5DEF&0&2#{a5dcbf10-6530-11d2-901f-00c04fb951ed}),ThreadID=20228
+22:26:27 665	INFO:执行开始
+22:26:27 666	INFO:开始测试设备
+22:26:27 673	INFO:测试设备成功
+22:26:27 678	INFO:开始下载文件
+22:26:27 682	INFO: Start to download files to flash,backup offset=0x18000
+22:26:27 687	INFO:开始下载文件到Flash
+22:26:27 687	Info:RKA_File_Download start,file=boot,offset=0x8000
+22:26:28 913	INFO: Download files to flash finished,Total(6029312)B
+22:26:28 913	INFO: Start to check data
+22:26:28 918	INFO:开始校验下载数据
+22:26:28 918	Info:RKA_File_Check start,file=boot,offset=0x8000
+22:26:29 305	INFO:下载文件成功,耗时(1623MS)
+22:26:29 311	INFO:执行成功
