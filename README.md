@@ -45,3 +45,6 @@ set the client/server name, the same with the hostname
 
 6. build-kernel:
 build kernel rockchip platform
+
+7. opencv:
+add opencv scripts for debian9 on http://blog.sina.com.cn/s/blog_a6559d920102yy4o.html
